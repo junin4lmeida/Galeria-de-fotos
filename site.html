@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eli e Junin</title>
+  <link rel="icon" type="image/png" href="img/pixel-heart-2779422_1280.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Press+Start+2P&family=Quicksand&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Botão tocar/pausar */
+    #btn-audio {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background: rgba(233, 69, 96, 0.85);
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(233, 69, 96, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      user-select: none;
+      transition: background 0.3s ease;
+      z-index: 20;
+    }
+
+    #btn-audio:hover {
+      background: rgba(233, 69, 96, 1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎨 Referências do Love Goods</h1>
+    <p>Para o meu amô saber as cores na hora de colorir</p>
+  </header>
+
+  <main class="gallery">
+    <!-- Imagens locais -->
+    <img src="img/img1.jpeg" alt="Foto de referência 1" />
+    <img src="img/img2.jpeg" alt="Foto de referência 2" />
+    <img src="img/img3.jpeg" alt="Foto de referência 3" />
+    <img src="img/img4.jpeg" alt="Foto de referência 4" />
+    <img src="img/img5.jpeg" alt="Foto de referência 5" />
+    <img src="img/img6.jpeg" alt="Foto de referência 6" />
+    <img src="img/img7.jpeg" alt="Foto de referência 7" />
+    <img src="img/img8.jpeg" alt="Foto de referência 8" />
+    <img src="img/img9.jpeg" alt="Foto de referência 9" />
+    <img src="img/img10.jpeg" alt="Foto de referência 10" />
+    <img src="img/img11.jpeg" alt="Foto de referência 11" />
+    <img src="img/img12.jpeg" alt="Foto de referência 12" />
+    <img src="img/img13.jpeg" alt="Foto de referência 13" />
+    <img src="img/img14.jpeg" alt="Foto de referência 14" />
+    <img src="img/img15.jpeg" alt="Foto de referência 15" />
+    <img src="img/img16.jpeg" alt="Foto de referência 16" />
+    <img src="img/img17.jpeg" alt="Foto de referência 17" />
+    <img src="img/img18.jpeg" alt="Foto de referência 18" />
+    <img src="img/img19.jpeg" alt="Foto de referência 19" />
+    <img src="img/img20.jpeg" alt="Foto de referência 20" />
+  </main>
+
+  <footer>
+    <p>
+      <img src="pixel-heart-2779422_1280.png" alt="Coração pixelado" class="icon-pixel-img" />
+      EU TE AMO MUITO
+      <img src="pixel-heart-2779422_1280.png" alt="Coração pixelado" class="icon-pixel-img" />
+    </p>
+    <p class="footer-subtext">Desenvolvido por Junin Almeida ®️</p>
+  </footer>
+
+  <audio id="audio" src="audio/universo.wav" loop></audio>
+
+  <button id="btn-audio" aria-label="Tocar música">▶️</button>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const btnAudio = document.getElementById('btn-audio');
+
+    function atualizarIcone() {
+      btnAudio.textContent = audio.paused ? '▶️' : '⏸️';
+    }
+
+    audio.play().catch(() => {
+    });
+
+    // Evento para o botão tocar/pausar
+    btnAudio.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+      atualizarIcone();
+    });
+
+    // Atualiza o ícone inicialmente
+    atualizarIcone();
+  </script>
+</body>
+</html>
